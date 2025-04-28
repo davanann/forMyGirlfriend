@@ -188,12 +188,12 @@ body {
         .fire-image-container {
             position: relative;
             display: inline-block;
-            margin: 50px auto;
+            margin: 20px auto;
             text-align: center;
         }
 
         .fire-image {
-            width: 300px; /* Medium size */
+            width: 400px; /* Medium size */
             height: auto;
             border-radius: 20px;
             box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
@@ -204,10 +204,10 @@ body {
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-size: 1em;
+            font-size: 1.2em;
             color: white;
             text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
-            width: 90%;
+            width: 80%;
         }
 
         .quote-note {
@@ -242,17 +242,16 @@ body {
 .carousel-heading {
     color: #ffd1dc;
     margin-bottom: 20px;
-    font-family: 'Dancing Script', cursive;
 }
 
 .carousel {
     position: relative;
-    overflow: hidden;
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: center; /* ⭐ Center the image */
+    align-items: center;      /* ⭐ Center arrows vertically relative to image */
 }
+
 
 .carousel-images {
     position: relative;
@@ -374,15 +373,186 @@ body {
     box-shadow: 0 0 15px rgba(255, 209, 220, 0.5);
 }
 
+.lynch-quote-container {
+    display: flex;
+    align-items: stretch;
+    background-color: #8e3a59; /* full background */
+    border: 2px solid #ffd1dc;
+    border-radius: 20px;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 900px;
+    overflow: hidden;
+    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+}
+
+.lynch-photo-box {
+    flex: 1;
+}
+
+.lynch-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lynch-quote-box {
+    flex: 2;
+    background-color: #8e3a59;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.lynch-quote-text {
+    font-size: 1.5em;
+    color: #ffffff;
+    text-align: center;
+    margin: 0;
+}
+
+.lynch-signature {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    color: #ffffff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.lynch-heading {
+    margin-top: 60px;
+    margin-bottom: 20px;
+}
+
+.lynch-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5em;
+    color: #ffd1dc;
+    text-align: center;
+}
+
+.top-bar {
+    width: 100%;
+    background-color: #8e3a59; /* matching soft pastel */
+    padding: 10px 0; /* 🎯 thinner padding */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #ffd1dc;
+}
+
+.top-bar h1 {
+    font-size: 1.8em; /* 🎯 smaller */
+    margin: 5px 0 0 0;
+    color: #ffd1dc;
+}
+
+.top-bar .subtitle {
+    font-size: 1.2em; /* 🎯 smaller */
+    margin: 5px 0 0 0;
+    color: #ffd1dc;
+}
+
+@keyframes shake {
+    0% { transform: rotate(-3deg) translate(0, 0); }
+    25% { transform: rotate(3deg) translate(2px, -2px); }
+    50% { transform: rotate(-3deg) translate(-2px, 2px); }
+    75% { transform: rotate(3deg) translate(2px, -2px); }
+    100% { transform: rotate(-3deg) translate(0, 0); }
+}
+
+.sticky:hover {
+    animation: shake 0.5s;
+}
+@keyframes driftUp {
+    0% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 1;
+    }
+    25% {
+        transform: translate(-20px, -25vh) rotate(45deg);
+    }
+    50% {
+        transform: translate(20px, -50vh) rotate(45deg);
+    }
+    75% {
+        transform: translate(-20px, -75vh) rotate(45deg);
+    }
+    100% {
+        transform: translate(20px, -100vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+.dream-heart {
+    position: fixed;
+    bottom: 0;
+    width: 24px;
+    height: 24px;
+    background-color: pink;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(45deg);
+    animation: driftUp 6s linear forwards; /* smooth and continuous */
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Two circles to complete the heart shape */
+.dream-heart::before,
+.dream-heart::after {
+    content: "";
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    background-color: pink;
+    border-radius: 50%;
+}
+
+.dream-heart::before {
+    top: -12px;
+    left: 0;
+}
+
+.dream-heart::after {
+    top: 0;
+    left: -12px;
+}
+
+
+.carousel-thumbnails {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.thumbnail {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.thumbnail:hover, .thumbnail.active-thumbnail {
+    opacity: 1;
+    border: 2px solid #ffd1dc; /* light pink border */
+}
+
+
     </style>
 </head>
 
 <body>
 
-    <h1>Alexandra Raghoonanan</h1>
-    <div class="subtitle">The Best Girlfriend In The World</div>
-
-    <hr>
+    <div class="top-bar">
+        <h1>Alexandra Raghoonanan</h1>
+        <div class="subtitle">The Best Girlfriend In The World</div>
+    </div>
+    
 
     <h1>i love my girlfriend!</h1>
 
@@ -440,7 +610,7 @@ body {
 
     <!-- Image Carousel Section -->
 <div class="carousel-box">
-    <h1 class="carousel-heading">Some Of My Favourite Moments Together</h1>
+    <h1 class="carousel-heading">Some Of My Favourite Moments Together ♡</h1>
     <div class="carousel">
         <button class="prev" onclick="prevSlide()">&#10094;</button>
         <div class="carousel-images">
@@ -470,7 +640,7 @@ body {
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic7.jpg" alt="Picture 7">
-                <div class="caption">this moment felt straight out of a film</div>
+                <div class="caption">how it feels when we kiss</div>
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic8.jpg" alt="Picture 8">
@@ -486,7 +656,7 @@ body {
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic11.jpg" alt="Picture 11">
-                <div class="caption">nami birthday party</div>
+                <div class="caption">nami's epic birthday party</div>
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic12.jpg" alt="Picture 12">
@@ -498,14 +668,37 @@ body {
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic14.jpg" alt="Picture 14">
-                <div class="caption">skating for the first time in so long with my baby</div>
+                <div class="caption">skating for the first time in so long with my valentine</div>
             </div>
             <div class="carousel-item">
                 <img src="images/carousel/pic15.jpg" alt="Picture 15">
-                <div class="caption">our little igloo hotbox</div>
+                <div class="caption">chilling in our little igloo hotbox</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic16.jpg" alt="Picture 16">
+                <div class="caption">making our crowns together, i just love doing crafts with you</div>
             </div>
         </div>
         <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+    <!-- Thumbnails Row -->
+    <div class="carousel-thumbnails">
+        <img src="images/carousel/pic1.jpg" onclick="goToSlide(0)" class="thumbnail">
+        <img src="images/carousel/pic2.jpg" onclick="goToSlide(1)" class="thumbnail">
+        <img src="images/carousel/pic3.jpg" onclick="goToSlide(2)" class="thumbnail">
+        <img src="images/carousel/pic4.jpg" onclick="goToSlide(3)" class="thumbnail">
+        <img src="images/carousel/pic5.jpg" onclick="goToSlide(4)" class="thumbnail">
+        <img src="images/carousel/pic6.jpg" onclick="goToSlide(5)" class="thumbnail">
+        <img src="images/carousel/pic7.jpg" onclick="goToSlide(6)" class="thumbnail">
+        <img src="images/carousel/pic8.jpg" onclick="goToSlide(7)" class="thumbnail">
+        <img src="images/carousel/pic9.jpg" onclick="goToSlide(8)" class="thumbnail">
+        <img src="images/carousel/pic10.jpg" onclick="goToSlide(9)" class="thumbnail">
+        <img src="images/carousel/pic11.jpg" onclick="goToSlide(10)" class="thumbnail">
+        <img src="images/carousel/pic12.jpg" onclick="goToSlide(11)" class="thumbnail">
+        <img src="images/carousel/pic13.jpg" onclick="goToSlide(12)" class="thumbnail">
+        <img src="images/carousel/pic14.jpg" onclick="goToSlide(13)" class="thumbnail">
+        <img src="images/carousel/pic15.jpg" onclick="goToSlide(14)" class="thumbnail">
+        <img src="images/carousel/pic16.jpg" onclick="goToSlide(15)" class="thumbnail">
     </div>
 </div>
 
@@ -528,7 +721,7 @@ body {
         <img src="images/fire.jpg" alt="Fire Picture" class="fire-image">
         <div class="fire-text">you set my heart ablaze and now it will never go out</div>
     </div>
-    
+
     <!-- Love Timer Counter -->
 <div class="counter-box">
     <h1 class="counter-title">How Long You've Been Mine</h1>
@@ -547,6 +740,22 @@ body {
             <img src="images/vampireKiss.jpg" alt="Vampire Kiss" style="width: 300px; height: auto; margin-top: 20px; border-radius: 20px; box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);">
         </div>
     </div>
+
+<!-- Daily Lynch Quote Heading -->
+<div class="lynch-heading">
+    <h1 class="lynch-title">Daily Lynch Quote ☕</h1>
+</div>
+    <!-- David Lynch Daily Quote Section -->
+<div class="lynch-quote-container">
+    <div class="lynch-photo-box">
+        <img src="images/lynch.jpg" alt="David Lynch" class="lynch-photo">
+    </div>
+    <div class="lynch-quote-box">
+        <p id="lynchQuote" class="lynch-quote-text">Loading quote...</p>
+        <p class="lynch-signature">— David Lynch</p>
+    </div>
+</div>
+
 
     
 
@@ -618,19 +827,30 @@ body {
 
         audioPlayer.addEventListener('ended', nextSong);
 
-        window.onload = () => {
-            loadSong(currentSong);
-        };
-
         function sayYes() {
     document.getElementById('yesMessage').style.display = 'block';
     document.getElementById('yesButton').style.display = 'none';
     document.getElementById('noButton').style.display = 'none';
-    // Create hearts
-    for (let i = 0; i < 20; i++) {
-        createHeart();
+    // Create a lot of floating pink hearts when YES is clicked
+    for (let i = 0; i < 30; i++) {
+        createFloatingHeart();
     }
 }
+
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'dream-heart';
+    heart.style.left = Math.random() * 100 + "vw"; // random horizontal position
+    heart.style.animationDuration = (4 + Math.random() * 3) + "s"; // random speed between 4s and 7s
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000); // remove after 8 seconds max
+}
+
+
+
 
 function moveNo() {
     const noButton = document.getElementById('noButton');
@@ -640,6 +860,32 @@ function moveNo() {
     noButton.style.left = (randomX) + 'px';
     noButton.style.top = (randomY) + 'px';
 }
+
+function sayYes() {
+    document.getElementById('yesMessage').style.display = 'block';
+    document.getElementById('yesButton').style.display = 'none';
+    document.getElementById('noButton').style.display = 'none';
+    
+    // Fill screen with hearts
+    for (let i = 0; i < 40; i++) {
+        setTimeout(createFloatingHeart, i * 100); // delay each heart a little
+    }
+}
+
+
+function createFloatingHeart() {
+    const heart = document.createElement('div');
+    heart.className = 'dream-heart';
+    heart.style.left = Math.random() * 100 + "vw"; // random horizontal start
+    heart.style.animationDuration = (5 + Math.random() * 3) + "s"; // 5–8 seconds random
+    heart.style.opacity = Math.random() * 0.5 + 0.5; // random opacity for dreamy effect
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000); // remove after 8s max
+}
+
 
 function createHeart() {
     const heart = document.createElement('div');
@@ -701,11 +947,20 @@ showSlide(currentSlide);
 
 function showSlide(index) {
     const slides = document.getElementsByClassName("carousel-item");
+    const thumbnails = document.getElementsByClassName("thumbnail");
+
     for (let i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";
+        if (thumbnails[i]) {
+            thumbnails[i].classList.remove("active-thumbnail");
+        }
     }
     slides[index].style.display = "flex";
+    if (thumbnails[index]) {
+        thumbnails[index].classList.add("active-thumbnail");
+    }
 }
+
 
 function nextSlide() {
     const slides = document.getElementsByClassName("carousel-item");
@@ -718,6 +973,11 @@ function prevSlide() {
     currentSlide = (currentSlide - 1 + slides.length) % slides.length;
     showSlide(currentSlide);
 }
+function goToSlide(index) {
+    currentSlide = index;
+    showSlide(currentSlide);
+}
+
 
 const startDate = new Date('2024-04-12T00:00:00');
 
@@ -771,17 +1031,64 @@ setInterval(updateLoveCounter, 1000);
 updateLoveCounter();
 
 
+const lynchQuotes = [
+    "Even bad coffee is better than no coffee at all.",
+    "Through the darkness of future past, the magician longs to see, one chance out between two worlds, fire walk with me!",
+    "I don't think it was pain that made [Vincent Van Gogh] great - I think his painting brought him whatever happiness he had.",
+    "Ideas are like fish. If you want to catch little fish, you can stay in the shallow water. But if you want to catch the big fish, you’ve got to go deeper. Down deep, the fish are more powerful and more pure. They’re huge and abstract. And they’re very beautiful.",
+    "I hate slick and pretty things. I prefer mistakes and accidents. Which is why I like things like cuts and bruises - they're like little flowers.",
+    "I like to remember things my own way. How I remembered them, not necessarily the way they happened.",
+    "We think we understand the rules when we become adults but what we really experience is a narrowing of the imagination.",
+    "I don’t think that people accept the fact that life doesn’t make sense. I think it makes people terribly uncomfortable.",
+    "Absurdity is what I like most in life.",
+    "I learned that just beneath the surface there's another world, and still different worlds as you dig deeper.",
+    "I don't know why people expect art to make sense. They accept the fact that life doesn't make sense.",
+    "It's so freeing, it's beautiful in a way, to have a great failure, there's nowhere to go but up.",
+    "There's a safety in thinking in a diner. You can have your coffee or your milkshake, and you can go off into strange dark areas, and always come back to the safety of the diner.",
+    "Black has depth.. you can go into it.. And you start seeing what you're afraid of. You start seeing what you love, and it becomes like a dream.",
+    "Sex is a doorway to something so powerful and mystical, but movies usually depict it in a completely flat way.",
+    "Everything I learned in my life, I learned because I decided to try something new.",
+    "Don’t fight the darkness. Don’t even worry about the darkness. Turn on the light and the darkness goes.",
+    "It makes me uncomfortable to talk about meanings and things. It's better not to know so much about what things mean.",
+    "Float with me in the world of ether.",
+    "There's always fear of the unknown where there's mystery.",
+    "Inside, we are ageless...and when we talk to ourselves, it's the same age of the person we were talking to when we were little.",
+    "The beautiful thing is that when you catch one fish that you love, even if it’s a little fish, it will draw in other fish.",
+    "Within your own self is a treasury, an ocean of pure bliss, consciousness, intelligence, creativity, love, happiness, energy, and peace… within every human being.",
+    "It’s maybe impossible to escape (your own head), but I guess the secret is the prison cell just gets bigger and prettier.",
+    "You can understand conflict, but you don't have to live in it.",
+    "It doesn't do any good to say, 'This is what it means.' It's better to leave room to dream.",
+    "Eraserhead is my most spiritual movie. No one understands when I say that, but it is.",
+    "That state of simplest form of awareness alone, is worthy of seeing, hearing, contemplating and realizing.",
+    "These so-called bleak times are necessary to go through in order to get to a much, much better place.",
+    "When you see an aging or a rusted bridge, you are seeing nature and man working together.",
+    "Intuition is seeing the solution.....its emotion and intellect going together.",
+    "People think anger is an edge, but anger is a weakness that poisons you and the environment around you.",
+    "It's better not to know so much about what things mean or how they might be interpreted.",
+    "We all have at least two sides. The world we live in is a world of opposites. The trick is to reconcile those opposing things.",
+    "Stay true to yourself. Let your voice ring out, and don’t let anybody fiddle with it. Never turn down a good idea, but never take a bad idea. And meditate.",
+    "Someone might say, 'I don't understand music'; but most people experience music emotionally.",
+    "The thing about meditation is: You become more and more you.",
+    "This whole world is wild at heart and weird on top.",
+    "Sitting in front of a fire is mesmerizing. It's magical. I feel the same way about electricity. And smoke. And flickering lights."
+];
+
+
+function displayLynchQuote() {
+    const today = new Date();
+    const seed = today.getFullYear() * 1000 + today.getMonth() * 100 + today.getDate();
+    const randomIndex = seed % lynchQuotes.length;
+    const quote = lynchQuotes[randomIndex];
+    document.getElementById('lynchQuote').textContent = quote;
+}
+
+window.onload = function() {
+    loadSong(currentSong);
+    displayLynchQuote();
+};
+
+
     </script>
-    
-    <!-- Sophocles Quote Note -->
-<div class="quote-note">
-    <p>
-        “One word<br>
-        Frees us of all the weight and pain of life:<br>
-        That word is love.”<br>
-        — Sophocles
-    </p>
-</div>
 
 </body>
 </html>
