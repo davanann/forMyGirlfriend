@@ -217,6 +217,151 @@
     background-size: 100% 25px;
 }
 
+.carousel-box {
+    background-color: #8e3a59;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    margin: 60px auto;
+    width: 90%;
+    max-width: 500px; /* 🎯 Made box smaller */
+}
+
+.carousel-heading {
+    color: #ffd1dc;
+    margin-bottom: 20px;
+    font-family: 'Dancing Script', cursive;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-images {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.carousel-item img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 209, 220, 0.5);
+}
+
+.caption {
+    margin-top: 10px;
+    color: #ffd1dc;
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 182, 193, 0.6);
+    border: none;
+    padding: 20px; /* 🎯 Make arrows bigger */
+    font-size: 36px; /* 🎯 Bigger arrow icons */
+    color: #6b2737;
+    border-radius: 50%;
+    transition: 0.3s;
+    user-select: none;
+    z-index: 5; /* 🎯 Bring arrows above everything */
+}
+
+.prev:hover, .next:hover {
+    background-color: #ffd1dc;
+}
+
+.prev {
+    left: 10px; /* 🎯 Bring back inside the carousel */
+}
+
+.next {
+    right: 10px; /* 🎯 Bring back inside the carousel */
+}
+
+.counter-box {
+    background-color: #8e3a59;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    margin: 60px auto;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.counter-title {
+    color: #ffd1dc;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+}
+
+.counter-time {
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffd1dc;
+    font-size: 1.8em;
+    text-shadow: 0 0 5px #ffd1dc, 0 0 10px #ffb6c1, 0 0 15px #ffb6c1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+.video-section {
+    margin: 60px auto;
+    background-color: #8e3a59;
+    padding: 30px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    text-align: center;
+}
+
+.video-heading {
+    color: #ffd1dc;
+    font-family: 'Dancing Script', cursive;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* ❌ Remove padding-bottom 56% hack */
+.video-container {
+    width: 100%;
+    overflow: hidden;
+}
+
+/* 🎯 Proper iframe size */
+.video-frame {
+    width: 100%;
+    height: 340px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 209, 220, 0.5);
+}
+
     </style>
 </head>
 
@@ -281,11 +426,102 @@
         </div>
     </div>
 
+    <!-- Image Carousel Section -->
+<div class="carousel-box">
+    <h1 class="carousel-heading">Some Of My Favourite Moments Together</h1>
+    <div class="carousel">
+        <button class="prev" onclick="prevSlide()">&#10094;</button>
+        <div class="carousel-images">
+            <div class="carousel-item active">
+                <img src="images/carousel/pic1.jpg" alt="Picture 1">
+                <div class="caption">the night i finally met my other half</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic2.jpg" alt="Picture 2">
+                <div class="caption">getting drunk and playing arcade games with bae, what could be more fun?</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic3.jpg" alt="Picture 3">
+                <div class="caption">i could have walked forever in that forest with you</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic4.jpg" alt="Picture 4">
+                <div class="caption">two weirdos</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic5.jpg" alt="Picture 5">
+                <div class="caption">at the ROM with the most brilliant work of art in front of me</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic6.jpg" alt="Picture 6">
+                <div class="caption">drifting through the world of ghibli with you</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic7.jpg" alt="Picture 7">
+                <div class="caption">this moment felt straight out of a film</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic8.jpg" alt="Picture 8">
+                <div class="caption">meeting bladee and then going to his show, actually historic</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic9.jpg" alt="Picture 9">
+                <div class="caption">nothing quite like seeing you where you belong, waves crashing against rock, you looking heavenly</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic10.jpg" alt="Picture 10">
+                <div class="caption">my mermaid girl on the best camping trip ever</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic11.jpg" alt="Picture 11">
+                <div class="caption">nami birthday party</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic12.jpg" alt="Picture 12">
+                <div class="caption">waiting for so long just to go on the behemoth</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic13.jpg" alt="Picture 13">
+                <div class="caption">halloween divas</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic14.jpg" alt="Picture 14">
+                <div class="caption">skating for the first time in so long with my baby</div>
+            </div>
+            <div class="carousel-item">
+                <img src="images/carousel/pic15.jpg" alt="Picture 15">
+                <div class="caption">our little igloo hotbox</div>
+            </div>
+        </div>
+        <button class="next" onclick="nextSlide()">&#10095;</button>
+    </div>
+</div>
+
+<!-- Video Section -->
+<div class="video-section">
+    <h1 class="video-heading">Before Sunrise 🎥</h1>
+    <div class="video-container">
+        <iframe 
+            src="https://drive.google.com/file/d/1DM_ZKj65jesETiXGCpqsSlkt550XwBI5/preview"
+            frameborder="0"
+            allow="autoplay; encrypted-media"
+            allowfullscreen
+            class="video-frame">
+        </iframe>
+    </div>
+</div>
+
     <!-- Fire image with text -->
     <div class="fire-image-container">
         <img src="images/fire.jpg" alt="Fire Picture" class="fire-image">
         <div class="fire-text">you set my heart ablaze and now it will never go out</div>
     </div>
+    
+    <!-- Love Timer Counter -->
+<div class="counter-box">
+    <h1 class="counter-title">How Long You've Been Mine</h1>
+    <div id="loveCounter" class="counter-time">Loading...</div>
+</div>
 
     <!-- Will You Be Mine Forever Section -->
     <div class="forever-section" style="margin: 80px 0;">
@@ -446,6 +682,82 @@ style.innerHTML = `
 }
 `;
 document.head.appendChild(style);
+
+
+let currentSlide = 0;
+showSlide(currentSlide);
+
+function showSlide(index) {
+    const slides = document.getElementsByClassName("carousel-item");
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[index].style.display = "flex";
+}
+
+function nextSlide() {
+    const slides = document.getElementsByClassName("carousel-item");
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+}
+
+function prevSlide() {
+    const slides = document.getElementsByClassName("carousel-item");
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+}
+
+const startDate = new Date('2024-04-12T00:00:00');
+
+function updateLoveCounter() {
+    const now = new Date();
+    
+    let years = now.getFullYear() - startDate.getFullYear();
+    let months = now.getMonth() - startDate.getMonth();
+    let days = now.getDate() - startDate.getDate();
+    let hours = now.getHours() - startDate.getHours();
+    let minutes = now.getMinutes() - startDate.getMinutes();
+    let seconds = now.getSeconds() - startDate.getSeconds();
+
+    if (seconds < 0) {
+        seconds += 60;
+        minutes--;
+    }
+    if (minutes < 0) {
+        minutes += 60;
+        hours--;
+    }
+    if (hours < 0) {
+        hours += 24;
+        days--;
+    }
+    if (days < 0) {
+        months--;
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0); // Last day of previous month
+        days += prevMonth.getDate();
+    }
+    if (months < 0) {
+        months += 12;
+        years--;
+    }
+
+    document.getElementById('loveCounter').innerHTML = `
+        <div>${pad(years)}y</div>
+        <div>${pad(months)}mo</div>
+        <div>${pad(days)}d</div>
+        <div>${pad(hours)}h</div>
+        <div>${pad(minutes)}m</div>
+        <div>${pad(seconds)}s</div>
+    `;
+}
+
+function pad(num) {
+    return num < 10 ? '0' + num : num;
+}
+
+setInterval(updateLoveCounter, 1000);
+updateLoveCounter();
+
 
     </script>
     
