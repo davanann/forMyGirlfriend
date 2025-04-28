@@ -5,16 +5,29 @@
     <meta charset="UTF-8">
     <title>For My Special Girl</title>
     <style>
-        body {
-            background-color: #6b2737; /* deep rose merlot */
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path d="M24.6,4.6c-2.5-2.5-6.6-2.5-9.1,0L15,5.1l-0.5-0.5c-2.5-2.5-6.6-2.5-9.1,0c-2.5,2.5-2.5,6.6,0,9.1l9.6,9.6l9.6-9.6C27.1,11.2,27.1,7.1,24.6,4.6z" fill="%23602231"/></svg>');
-            background-size: 40px 40px;
-            color: #ffd1dc; /* light pink text */
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
+body {
+    background-color: #6b2737; /* deep rose merlot */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path d="M24.6,4.6c-2.5-2.5-6.6-2.5-9.1,0L15,5.1l-0.5-0.5c-2.5-2.5-6.6-2.5-9.1,0c-2.5,2.5-2.5,6.6,0,9.1l9.6,9.6l9.6-9.6C27.1,11.2,27.1,7.1,24.6,4.6z" fill="%23602231"/></svg>');
+    background-repeat: repeat;
+    background-size: 40px 40px;
+    color: #ffd1dc;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    animation: driftBackground 30s linear infinite;
+    background-attachment: fixed;
+}
+@keyframes driftBackground {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 100px 100px;
+    }
+}
+
+
 
 
         h1, h2, p {
