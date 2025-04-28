@@ -1,30 +1,463 @@
 <!DOCTYPE html>
-
-<html>
-
-<!-- best website ever-->
-
+<html lang="en">
 <head>
-    <title>
-        for my special girl
-    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>For My Special Girl</title>
+    <style>
+        body {
+            background-color: #6b2737; /* deep rose merlot */
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><text x="0" y="30" font-size="30" fill="%23602231">❤</text></svg>');
+            background-repeat: repeat;
+            background-size: 40px 40px;
+            color: #ffd1dc; /* light pink text */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+
+        h1, h2, p {
+            margin: 20px;
+        }
+
+        .subtitle {
+            font-size: 1.5em;
+            margin-top: -10px;
+        }
+
+        hr {
+            border: 1px solid #ffccd5;
+        }
+
+        /* Main image + stickers */
+        .image-sticker-container {
+            position: relative;
+            display: inline-block;
+            margin: 20px auto;
+        }
+
+        .main-image {
+            width: 80%;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
+        }
+
+        .sticker {
+            position: absolute;
+            width: 100px;
+            height: auto;
+            pointer-events: none;
+            opacity: 0.9;
+            transform: rotate(-10deg);
+        }
+
+        .sticker1 { top: 50%; left: 55%; }
+        .sticker2 { top: 20%; left: 70%; }
+        .sticker3 { top: 50%; left: 10%; }
+        .sticker4 { top: 65%; left: 80%; }
+        .sticker5 { top: 80%; left: 10%; }
+        .sticker6 { top: 1%; left: 20%; }
+        .sticker7 { top: 1%; left: 85%; }
+        .sticker8 { top: 10%; left: 5%; }
+        .sticker9 { top: 45%; left: 75%; }
+        .sticker10 { top: 90%; left: 75%; }
+
+        /* Music player box */
+        .music-box {
+            background-color: #8e3a59;
+            border: 2px solid #ffb6c1;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 40px auto;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0px 4px 15px rgba(255,182,193,0.3);
+        }
+
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .player-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .cd {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            animation: spin 4s linear infinite;
+            animation-play-state: paused;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .controls {
+            margin-top: 10px;
+        }
+
+        .controls button {
+            background-color: #ffb6c1;
+            border: none;
+            color: #6b2737;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 10px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .controls button:hover {
+            background-color: #ffd1dc;
+        }
+
+        .audio-label {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .current-song {
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        /* Sticky Notes Section */
+        .love-notes-section {
+            margin: 60px 0;
+        }
+
+        .sticky-notes {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sticky {
+        width: 150px;
+        height: 150px;
+        background-color: #ffd6e7;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
+        font-size: 0.9em;
+        color: #6b2737;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        transform: rotate(-3deg);
+        font-family: 'Dancing Script', cursive; /* ✨ handwritten fancy cursive */
+        }   
+
+        .sticky:nth-child(2n) {
+            background-color: #ffe5f1;
+            transform: rotate(2deg);
+        }
+
+        .sticky:nth-child(3n) {
+            background-color: #fddde6;
+            transform: rotate(-1deg);
+        }
+
+        /* Fire image and text */
+        .fire-image-container {
+            position: relative;
+            display: inline-block;
+            margin: 50px auto;
+            text-align: center;
+        }
+
+        .fire-image {
+            width: 300px; /* Medium size */
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
+        }
+
+        .fire-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 1em;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+            width: 90%;
+        }
+
+        .quote-note {
+    margin: 80px auto;
+    background-color: #fff8c9; /* light yellow paper */
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Courier New', Courier, monospace;
+    color: #6b2737;
+    line-height: 1.5;
+    text-align: center;
+    background-image: repeating-linear-gradient(
+        #fff8c9 0px,
+        #fff8c9 23px,
+        #d89b9b 24px /* darker pinkish line */
+    );
+    background-size: 100% 25px;
+}
+
+    </style>
 </head>
 
 <body>
-<h1>
-    i love my girlfriend!
-</h1>
-<hr>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et eligendi natus, quae quas omnis amet praesentium tempore aliquam consectetur hic possimus, distinctio, veritatis eius. Est unde sit saepe quis officia.</p>
-<br>
-<h2>header 2</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum provident facilis magnam blanditiis laboriosam voluptates voluptatem, omnis, aliquam nesciunt fuga quia deleniti temporibus aliquid eveniet? Provident mollitia aliquid incidunt! Quas!</p>
+
+    <h1>Alexandra Raghoonanan</h1>
+    <div class="subtitle">The Best Girlfriend In The World</div>
+
+    <hr>
+
+    <h1>i love my girlfriend!</h1>
+
+    <!-- Main image with stickers floating over it -->
+    <div class="image-sticker-container">
+        <img src="images/campingWater.jpg" alt="Camping Water Picture" class="main-image">
+
+        <img src="images/stickers/sticker1.png" class="sticker sticker1">
+        <img src="images/stickers/sticker2.png" class="sticker sticker2">
+        <img src="images/stickers/sticker3.png" class="sticker sticker3">
+        <img src="images/stickers/sticker4.png" class="sticker sticker4">
+        <img src="images/stickers/sticker5.png" class="sticker sticker5">
+        <img src="images/stickers/sticker6.png" class="sticker sticker6">
+        <img src="images/stickers/sticker7.png" class="sticker sticker7">
+        <img src="images/stickers/sticker8.png" class="sticker sticker8">
+        <img src="images/stickers/sticker9.png" class="sticker sticker9">
+        <img src="images/stickers/sticker10.png" class="sticker sticker10">
+    </div>
+
+    <!-- Music player -->
+    <div class="music-box">
+        <div class="audio-container">
+            <div class="audio-label">Songs that remind me of you</div>
+            <div class="current-song" id="currentSong">Loading...</div>
+
+            <div class="player-wrapper">
+                <img src="images/cd.png" id="cdImage" class="cd" alt="CD Image">
+                <audio id="audioPlayer" controls>
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <div class="controls">
+                <button onclick="prevSong()">Previous</button>
+                <button onclick="playPause()">Play/Pause</button>
+                <button onclick="nextSong()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Things I Love About You -->
+    <div class="love-notes-section">
+        <h1>Things I Love About You</h1>
+        <div class="sticky-notes">
+            <div class="sticky">Your radiant smile that lights up even my darkest days</div>
+            <div class="sticky">All of your different laughs, each one feels like home</div>
+            <div class="sticky">Your deep brown eyes that have been lost in since day one</div>
+            <div class="sticky">Your profound intelligence and understanding of yourself</div>
+            <div class="sticky">The way you just get me, and always know what i'm thinking</div>
+            <div class="sticky">Your esoteric, curated and yet so effortless style</div>
+            <div class="sticky">Your unforgettable sweet scent, my favourite smell</div>
+            <div class="sticky">The way you can dance to anything, so free and joyfully</div>
+        </div>
+    </div>
+
+    <!-- Fire image with text -->
+    <div class="fire-image-container">
+        <img src="images/fire.jpg" alt="Fire Picture" class="fire-image">
+        <div class="fire-text">you set my heart ablaze now and it will never go out</div>
+    </div>
+
+    <!-- Will You Be Mine Forever Section -->
+    <div class="forever-section" style="margin: 80px 0;">
+        <h1 style="font-size: 2.5em; color: #ffd1dc;">Will you be mine forever?</h1>
+        <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
+            <button id="yesButton" onclick="sayYes()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; border-radius: 10px; font-size: 1.2em; cursor: pointer;">Yes</button>
+            <button id="noButton" onmouseover="moveNo()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; border-radius: 10px; font-size: 1.2em; cursor: pointer;">No</button>
+        </div>
+        <div id="yesMessage" style="display: none; margin-top: 30px; text-align: center; color: #ffd1dc;">
+            <h2>Awh baby, I love you so much. Let's be together forever <3</h2>
+            <img src="images/vampireKiss.jpg" alt="Vampire Kiss" style="width: 300px; height: auto; margin-top: 20px; border-radius: 20px; box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);">
+        </div>
+    </div>
+
+    
+
+
+    <script>
+        const songs = [
+            "audio/alexandra/1-1 - Ecco2K Thaiboy Digital ft. Yung Lean.mp3",
+            "audio/alexandra/AAA Powerline - Ecco2K.mp3",
+            "audio/alexandra/B2b - Charli xcx.mp3",
+            "audio/alexandra/Cinderella (live) - bladee & ecco2k.mp3",
+            "audio/alexandra/Claws - Charli XCX.mp3",
+            "audio/alexandra/crush - 2hollis.mp3",
+            "audio/alexandra/Everything is romantic - Charli xcx ft. caroline polachek.mp3",
+            "audio/alexandra/FLATLINE - bladee.mp3",
+            "audio/alexandra/Flop - bassvictim.mp3",
+            "audio/alexandra/Height - The Hellp.mp3",
+            "audio/alexandra/high as fuck - kets4eki.mp3",
+            "audio/alexandra/Immaterial - SOPHIE.mp3",
+            "audio/alexandra/Inside Out - SOPHIE ft. Shygirl.mp3",
+            "audio/alexandra/Lipgloss - Charli XCX ft. cupcakKe.mp3",
+            "audio/alexandra/Love Potions Slowed and Reverbed.mp3",
+            "audio/alexandra/Ohms - Deftones.mp3",
+            "audio/alexandra/Out Of Control - She Wants Revenge.mp3",
+            "audio/alexandra/ride the dragon - FKA Twigs.mp3",
+            "audio/alexandra/SALT - CRIM3S.mp3",
+            "audio/alexandra/Tennis Court - Lorde.mp3",
+            "audio/alexandra/Under Your Spell - Bladee.mp3",
+            "audio/alexandra/Unifier - Ayegy.mp3",
+            "audio/alexandra/Woe - Shygirl (Björk Remix).mp3",
+            "audio/alexandra/What I Like - Charli XCX.mp3"
+        ];
+
+        const audioPlayer = document.getElementById('audioPlayer');
+        const currentSongLabel = document.getElementById('currentSong');
+        const cdImage = document.getElementById('cdImage');
+        let currentSong = 0;
+
+        function loadSong(index) {
+            audioPlayer.src = songs[index];
+            currentSongLabel.textContent = songs[index].split('/').pop().replace('.mp3', '');
+            audioPlayer.play();
+        }
+
+        function playPause() {
+            if (audioPlayer.paused) {
+                audioPlayer.play();
+            } else {
+                audioPlayer.pause();
+            }
+        }
+
+        function nextSong() {
+            currentSong = (currentSong + 1) % songs.length;
+            loadSong(currentSong);
+        }
+
+        function prevSong() {
+            currentSong = (currentSong - 1 + songs.length) % songs.length;
+            loadSong(currentSong);
+        }
+
+        audioPlayer.addEventListener('play', () => {
+            cdImage.style.animationPlayState = 'running';
+        });
+
+        audioPlayer.addEventListener('pause', () => {
+            cdImage.style.animationPlayState = 'paused';
+        });
+
+        audioPlayer.addEventListener('ended', nextSong);
+
+        window.onload = () => {
+            loadSong(currentSong);
+        };
+
+        function sayYes() {
+    document.getElementById('yesMessage').style.display = 'block';
+    document.getElementById('yesButton').style.display = 'none';
+    document.getElementById('noButton').style.display = 'none';
+    // Create hearts
+    for (let i = 0; i < 20; i++) {
+        createHeart();
+    }
+}
+
+function moveNo() {
+    const noButton = document.getElementById('noButton');
+    const randomX = Math.floor(Math.random() * 100) - 50;
+    const randomY = Math.floor(Math.random() * 100) - 50;
+    noButton.style.position = 'relative';
+    noButton.style.left = (randomX) + 'px';
+    noButton.style.top = (randomY) + 'px';
+}
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.style.position = 'absolute';
+    heart.style.width = '20px';
+    heart.style.height = '20px';
+    heart.style.background = 'pink';
+    heart.style.transform = 'rotate(45deg)';
+    heart.style.top = '50%';
+    heart.style.left = Math.random() * window.innerWidth + 'px';
+    heart.style.opacity = '0.8';
+    heart.style.borderRadius = '50% 50% 0 0';
+    heart.style.animation = 'floatHeart 2s ease-in forwards';
+    heart.style.zIndex = '1000';
+    
+    heart.style.pointerEvents = 'none';
+    document.body.appendChild(heart);
+
+    const before = document.createElement('div');
+    before.style.content = '""';
+    before.style.width = '20px';
+    before.style.height = '20px';
+    before.style.background = 'pink';
+    before.style.borderRadius = '50%';
+    before.style.position = 'absolute';
+    before.style.top = '-10px';
+    before.style.left = '0';
+    heart.appendChild(before);
+
+    const after = document.createElement('div');
+    after.style.content = '""';
+    after.style.width = '20px';
+    after.style.height = '20px';
+    after.style.background = 'pink';
+    after.style.borderRadius = '50%';
+    after.style.position = 'absolute';
+    after.style.left = '-10px';
+    after.style.top = '0';
+    heart.appendChild(after);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 2000);
+}
+
+// Heart floating animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes floatHeart {
+    0% {transform: scale(1) translateY(0);}
+    100% {transform: scale(1.5) translateY(-300px); opacity: 0;}
+}
+`;
+document.head.appendChild(style);
+
+    </script>
+    
+    <!-- Sophocles Quote Note -->
+<div class="quote-note">
+    <p>
+        “One word<br>
+        Frees us of all the weight and pain of life:<br>
+        That word is love.”<br>
+        — Sophocles
+    </p>
+</div>
 
 </body>
-
-
-
-
-
-
 </html>
