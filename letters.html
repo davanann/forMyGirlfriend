@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letters For My Lover</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #ffd1dc;
+      background: url('images/backgrounds/fullscreen.jpg') no-repeat center center fixed;
+      background-size: cover;
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.75);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 60px 20px;
+    }
+
+    .content-box {
+      width: 90%;
+      max-width: 900px;
+      background: url('images/backgrounds/main.jpg') repeat;
+      background-size: auto;
+      border: 2px solid #ffb6c1;
+      padding: 20px;
+      box-shadow: 0 0 15px rgba(255, 182, 193, 0.4);
+      position: relative;
+    }
+
+    .page-title {
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.5em;
+      color: #ffd1dc;
+      text-shadow: 0 0 5px #ffb6c1;
+    }
+
+    .letter {
+      background: rgba(0, 0, 0, 0.5);
+      margin: 15px 0;
+      border: 1px solid #ffb6c1;
+      overflow: hidden;
+    }
+
+    .letter summary {
+      cursor: pointer;
+      padding: 10px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: #6b2737;
+      color: #ffd1dc;
+    }
+
+    .letter .pages {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      padding: 10px;
+    }
+
+    .letter[open] .pages {
+      display: flex;
+    }
+
+    .pages img {
+      width: 100%;
+      max-height: 700px;
+      object-fit: contain;
+      display: none;
+    }
+
+    .pages img.active {
+      display: block;
+    }
+
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 10px;
+    }
+
+    .nav-buttons button {
+      background-color: #ffb6c1;
+      border: none;
+      color: #6b2737;
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+
+    .return-home {
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .return-home a {
+      text-decoration: none;
+      background-color: #ffb6c1;
+      color: #6b2737;
+      padding: 10px 20px;
+      font-size: 1.1em;
+      box-shadow: 0 0 10px #ffd1dc;
+    }
+
+    .return-home a:hover {
+      background-color: #ffd1dc;
+    }
+
+        .gif-box {
+    margin-top: 40px;
+    border: 2px solid #ffb6c1;
+    padding: 10px;
+    text-align: center;
+    }
+
+    .gif-box img {
+    max-width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <div class="content-box">
+      <div class="gif-banner"></div>
+      <div class="page-title">Letters For My Lover</div>
+
+      <br>
+      <br>
+
+
+      <details class="letter">
+        <summary>Letter #1 </summary>
+        <div class="pages">
+          <img src="images/letters/letter1-page1.jpg" class="active" alt="Letter 1 Page 1">
+          <img src="images/letters/letter1-page2.jpg" alt="Letter 1 Page 2">
+          <div class="nav-buttons">
+            <button onclick="changePage(this, -1)">Previous</button>
+            <button onclick="changePage(this, 1)">Next</button>
+          </div>
+        </div>
+      </details>
+
+      <details class="letter">
+        <summary>Letter #2 </summary>
+        <div class="pages">
+          <img src="images/letters/letter2.jpg" class="active" alt="Letter 2">
+        </div>
+      </details>
+
+      <details class="letter">
+        <summary>Letter #3 </summary>
+        <div class="pages">
+          <img src="images/letters/letter3.jpg" class="active" alt="Letter 3">
+        </div>
+      </details>
+
+      <div class="return-home">
+        <a href="index.html">← Return Home</a>
+      </div>
+    </div>
+    <div class="gif-box">
+        <img src="images/letters/closing.gif" alt="Cute closing GIF">
+      </div>
+      
+  </div>
+
+  <script>
+    function changePage(button, direction) {
+      const pagesContainer = button.closest(".pages");
+      const pages = pagesContainer.querySelectorAll("img");
+      let currentIndex = Array.from(pages).findIndex(img => img.classList.contains("active"));
+
+      pages[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + direction + pages.length) % pages.length;
+      pages[currentIndex].classList.add("active");
+    }
+  </script>
+</body>
+</html>

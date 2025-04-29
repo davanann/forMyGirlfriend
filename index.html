@@ -52,7 +52,6 @@ body {
 
         .main-image {
             width: 80%;
-            border-radius: 20px;
             box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
         }
 
@@ -78,9 +77,8 @@ body {
 
         /* Music player box */
         .music-box {
-            background-color: #8e3a59;
+            background-color: rgba(142, 58, 89, 0.5);
             border: 2px solid #ffb6c1;
-            border-radius: 20px;
             padding: 20px;
             margin: 40px auto;
             width: 80%;
@@ -125,7 +123,6 @@ body {
             color: #6b2737;
             padding: 10px 20px;
             margin: 5px;
-            border-radius: 10px;
             font-size: 1em;
             cursor: pointer;
         }
@@ -162,7 +159,6 @@ body {
         height: 150px;
         background-color: #ffd6e7;
         padding: 10px;
-        border-radius: 10px;
         box-shadow: 3px 3px 8px rgba(0,0,0,0.2);
         font-size: 0.9em;
         color: #6b2737;
@@ -195,7 +191,6 @@ body {
         .fire-image {
             width: 400px; /* Medium size */
             height: auto;
-            border-radius: 20px;
             box-shadow: 0 0 15px rgba(255, 209, 220, 0.3);
         }
 
@@ -210,29 +205,10 @@ body {
             width: 80%;
         }
 
-        .quote-note {
-    margin: 80px auto;
-    background-color: #fff8c9; /* light yellow paper */
-    width: 300px;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    font-family: 'Courier New', Courier, monospace;
-    color: #6b2737;
-    line-height: 1.5;
-    text-align: center;
-    background-image: repeating-linear-gradient(
-        #fff8c9 0px,
-        #fff8c9 23px,
-        #d89b9b 24px /* darker pinkish line */
-    );
-    background-size: 100% 25px;
-}
 
 .carousel-box {
-    background-color: #8e3a59;
+    background-color: rgba(142, 58, 89, 0.5);
     padding: 20px;
-    border-radius: 20px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
     margin: 60px auto;
     width: 90%;
@@ -273,7 +249,6 @@ body {
     width: 100%;
     max-width: 400px;
     height: auto;
-    border-radius: 15px;
     box-shadow: 0 0 15px rgba(255, 209, 220, 0.5);
 }
 
@@ -290,19 +265,14 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: rgba(255, 182, 193, 0.6);
+    background-color: rgba(0,0,0,0);
     border: none;
     padding: 20px; /* 🎯 Make arrows bigger */
     font-size: 36px; /* 🎯 Bigger arrow icons */
-    color: #6b2737;
-    border-radius: 50%;
+    color: #ffd1dc;
     transition: 0.3s;
     user-select: none;
     z-index: 5; /* 🎯 Bring arrows above everything */
-}
-
-.prev:hover, .next:hover {
-    background-color: #ffd1dc;
 }
 
 .prev {
@@ -314,9 +284,8 @@ body {
 }
 
 .counter-box {
-    background-color: #8e3a59;
+    background-color: rgba(142, 58, 89, 0.5);
     padding: 30px;
-    border-radius: 20px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
     margin: 60px auto;
     width: 90%;
@@ -343,9 +312,8 @@ body {
 }
 .video-section {
     margin: 60px auto;
-    background-color: #8e3a59;
+    background-color: rgba(142, 58, 89, 0.5);
     padding: 30px;
-    border-radius: 20px;
     width: 90%;
     max-width: 600px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
@@ -369,16 +337,14 @@ body {
 .video-frame {
     width: 100%;
     height: 340px;
-    border-radius: 15px;
     box-shadow: 0 0 15px rgba(255, 209, 220, 0.5);
 }
 
 .lynch-quote-container {
     display: flex;
     align-items: stretch;
-    background-color: #8e3a59; /* full background */
+    background-color: rgba(142, 58, 89, 0.5);
     border: 2px solid #ffd1dc;
-    border-radius: 20px;
     margin: 60px auto;
     width: 90%;
     max-width: 900px;
@@ -398,7 +364,7 @@ body {
 
 .lynch-quote-box {
     flex: 2;
-    background-color: #8e3a59;
+    background-color: rgba(142, 58, 89, 0.5);
     padding: 40px;
     display: flex;
     flex-direction: column;
@@ -434,17 +400,12 @@ body {
 }
 
 .top-bar {
+    border: 2px solid #ffb6c1;
     width: 100%;
-    background-color: #8e3a59; /* matching soft pastel */
+    background-color: rgba(142, 58, 89, 0.5);
     padding: 10px 0; /* 🎯 thinner padding */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
     border-bottom: 2px solid #ffd1dc;
-}
-
-.top-bar h1 {
-    font-size: 1.8em; /* 🎯 smaller */
-    margin: 5px 0 0 0;
-    color: #ffd1dc;
 }
 
 .top-bar .subtitle {
@@ -531,7 +492,6 @@ body {
     width: 60px;
     height: 60px;
     object-fit: cover;
-    border-radius: 10px;
     cursor: pointer;
     opacity: 0.7;
     transition: 0.3s;
@@ -542,19 +502,96 @@ body {
     border: 2px solid #ffd1dc; /* light pink border */
 }
 
+.top-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* space between title and link */
+    margin-top: 20px;
+}
+
+.main-title {
+    font-size: 2em;
+    color: #ffd1dc;
+    margin: 0;
+    font-family: 'Dancing Script', cursive;
+}
+
+.letters-link {
+    font-size: 1.2em;
+    color: #ffd1dc;
+    text-decoration: none;
+    background-color: #8e3a59;
+    padding: 8px 15px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(255, 182, 193, 0.5);
+    font-family: 'Dancing Script', cursive;
+    transition: 0.3s;
+}
+
+.letters-link:hover {
+    background-color: #ffd1dc;
+    color: #6b2737;
+}
+
+
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.center-box {
+    width: 90%;
+    max-width: 1000px;
+    background: url('images/backgrounds/main2.jpg') repeat;
+    background-size: auto; /* 🛠 No stretch or zoom — keep image original size */
+    position: relative;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    border: 2px solid #ffb6c1;
+    overflow: hidden;
+}
+
+
+.center-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+}
+
+.center-box > * {
+    position: relative;
+    z-index: 2;
+}
+
+
 
     </style>
 </head>
 
 <body>
 
+    <div class="overlay">
+        <div class="center-box">
     <div class="top-bar">
         <h1>Alexandra Raghoonanan</h1>
         <div class="subtitle">The Best Girlfriend In The World</div>
     </div>
     
 
-    <h1>i love my girlfriend!</h1>
+    <div class="top-header">
+        <h1 class="main-title">i love my girlfriend!</h1>
+        <a href="lettersLogin.html" class="letters-link">✉️ Letters</a>
+    </div>
+    
 
     <!-- Main image with stickers floating over it -->
     <div class="image-sticker-container">
@@ -732,8 +769,8 @@ body {
     <div class="forever-section" style="margin: 80px 0;">
         <h1 style="font-size: 2.5em; color: #ffd1dc;">Will you be mine forever?</h1>
         <div style="margin-top: 20px; display: flex; justify-content: center; gap: 20px;">
-            <button id="yesButton" onclick="sayYes()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; border-radius: 10px; font-size: 1.2em; cursor: pointer;">Yes</button>
-            <button id="noButton" onmouseover="moveNo()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; border-radius: 10px; font-size: 1.2em; cursor: pointer;">No</button>
+            <button id="yesButton" onclick="sayYes()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">Yes</button>
+            <button id="noButton" onmouseover="moveNo()" style="background-color: #ffb6c1; border: none; color: #6b2737; padding: 15px 30px; font-size: 1.2em; cursor: pointer;">No</button>
         </div>
         <div id="yesMessage" style="display: none; margin-top: 30px; text-align: center; color: #ffd1dc;">
             <h2>Awh baby, I love you so much. Let's be together forever <3</h2>
@@ -1087,8 +1124,10 @@ window.onload = function() {
     displayLynchQuote();
 };
 
-
     </script>
+
+</div>
+</div>
 
 </body>
 </html>

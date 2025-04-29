@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Letters for You ♡</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #6b2737;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30"><path d="M24.6,4.6c-2.5-2.5-6.6-2.5-9.1,0L15,5.1l-0.5-0.5c-2.5-2.5-6.6-2.5-9.1,0c-2.5,2.5-2.5,6.6,0,9.1l9.6,9.6l9.6-9.6C27.1,11.2,27.1,7.1,24.6,4.6z" fill="%23602231"/></svg>');
+      background-repeat: repeat;
+      background-size: 40px 40px;
+      color: #ffd1dc;
+      font-family: 'Dancing Script', cursive;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      animation: driftBackground 30s linear infinite;
+      background-attachment: fixed;
+    }
+
+    @keyframes driftBackground {
+      0% { background-position: 0 0; }
+      100% { background-position: 100px 100px; }
+    }
+
+    .title-box {
+      width: 90%;
+      max-width: 500px;
+      margin: 20px auto 0 auto;
+      border: 2px solid #ffb6c1;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0;
+    }
+
+    .title-box h1 {
+      margin: 0 0 10px 0;
+      font-size: 2.2em;
+    }
+
+    .title-box .hint {
+      font-size: 0.95em;
+      opacity: 0.8;
+    }
+
+    .overlay {
+      min-height: 60vh;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 20px 0;    
+    }
+
+    .center-box {
+      width: 90%;
+      max-width: 500px;
+      background: url('images/backgrounds/main3.gif') repeat;
+      background-size: auto;
+      position: relative;
+      padding: 40px 20px;
+      border: 2px solid #ffb6c1;
+      overflow: hidden;
+      border-radius: 0;
+    }
+
+    .center-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .center-box > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    input[type="password"] {
+      padding: 10px;
+      border: 2px solid #ffb6c1;
+      border-radius: 0;
+      width: 80%;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+      font-family: 'Courier New', monospace;
+      background-color: transparent;
+      color: #ffd1dc;
+      text-align: center;
+    }
+
+    button {
+      background-color: transparent;
+      color: #ffd1dc;
+      padding: 10px 25px;
+      border: 2px solid #ffb6c1;
+      border-radius: 0;
+      font-size: 1.2em;
+      font-family: 'Dancing Script', cursive;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #ffb6c1;
+      color: #6b2737;
+    }
+
+    .error {
+      margin-top: 15px;
+      color: #ffcccc;
+      font-size: 1em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Title & Hint box above -->
+  <div class="title-box">
+    <h1>♡ Letters for You ♡</h1>
+    <div class="hint">(Hint: Your cat's adopted name)</div>
+  </div>
+
+  <!-- Center box login with background image + dark overlay -->
+  <div class="overlay">
+    <div class="center-box">
+      <input type="password" id="passwordInput" placeholder="Enter the magic word..."><br>
+      <button onclick="checkPassword()">Open</button>
+      <div id="errorMessage" class="error"></div>
+    </div>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const password = document.getElementById('passwordInput').value;
+      if (password.toLowerCase() === "pudding") {
+        window.location.href = "letters.html";
+      } else {
+        document.getElementById('errorMessage').innerText = "Hmm... that's not quite right. Try again!";
+      }
+    }
+  </script>
+
+</body>
+</html>
